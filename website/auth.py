@@ -23,7 +23,7 @@ def login():
                 flash('Incorrect password DUDE!', category='error')
         else:
             flash("Its high time to create an account DUDE!",category='error')
-    return render_template('login.html')
+    return render_template('login.html', user=current_user)
 
 @auth.route('/logout')
 @login_required
@@ -64,4 +64,4 @@ def sign_up():
 
 
 
-    return render_template('signup.html')
+    return render_template('signup.html', user=current_user)
